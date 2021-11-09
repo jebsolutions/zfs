@@ -64,7 +64,8 @@ Every dataset has a set of properties that export statistics about the dataset
 as well as control various behaviors.
 Properties are inherited from the parent unless overridden by the child.
 Some properties apply only to certain types of datasets
-.Pq file systems, volumes, or snapshots .
+.Pq file systems, volumes, or snapshots.
+Native properties can also apply directly to vdevs.
 .Pp
 The values of numeric properties can be specified using human-readable suffixes
 .Po for example,
@@ -2070,3 +2071,34 @@ Use the
 command to clear a user property.
 If the property is not defined in any parent dataset, it is removed entirely.
 Property values are limited to 8192 bytes.
+.Ss vdev Properties
+.Bl -tag -compact -offset Ds -width "rootcontext="
+.It Sy devid
+device id (read only)
+.It Sy physpath
+physical path (read only)
+.It Sy encpath
+enclosure path (read only)
+.It Sy fru
+HACK/FIX: This needs a description
+.It Sy parent
+Parent of his vdev (read only)
+.It Sy children
+Children of this vdev (read only)
+.It Sy size
+size of this vdev (read only)
+.It Sy free
+free space on this vdev (read only)
+.It Sy allocated
+allocated space on this vdev (read only)
+.It Sy expandsize
+HACK/FIX: This needs a description
+.It Sy fragmentation
+percent of fragmentation in this vdev (read only)
+.It Sy guid 
+globaly unique id of this vdev (read only)
+.It Sy state 
+state of this vdev such as online or offline (read only)
+.It Sy comment
+A text comment up to 1024 characters long
+.El
