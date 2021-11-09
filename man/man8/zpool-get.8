@@ -34,17 +34,32 @@
 .Nm zpool-get
 .Nd retrieve properties of ZFS storage pools
 .Sh SYNOPSIS
+
 .Nm zpool
 .Cm get
 .Op Fl Hp
 .Op Fl o Ar field Ns Oo , Ns Ar field Oc Ns …
-.Sy all Ns | Ns Ar property Ns Oo , Ns Ar property Oc Ns …
-.Oo Ar pool Oc Ns …
+.Sy all Ns | Ns Ar property
+.Op Ns pool
+
+.Nm zpool
+.Cm get
+.Op Fl Hp
+.Op Fl o Ar field Ns Oo , Ns Ar field Oc Ns …
+.Sy all Ns Ar property Ar pool Ar vdev
+
 .Nm zpool
 .Cm set
 .Ar property Ns = Ns Ar value
+
+.Nm zpool
+.Cm set
+.Ar property = Ar value 
 .Ar pool
-.
+.Ar vdev
+
+
+
 .Sh DESCRIPTION
 .Bl -tag -width Ds
 .It Xo
